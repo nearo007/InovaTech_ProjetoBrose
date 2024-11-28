@@ -30,6 +30,7 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     '689a-2804-14c-87b9-91cd-b162-a548-7823-50ff.ngrok-free.app',
+    'inovatech-projetobrose.onrender.com',
 ]
 
 # Application definition
