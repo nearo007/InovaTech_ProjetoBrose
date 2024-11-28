@@ -53,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'projeto.urls'
@@ -116,7 +117,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "app" / "static" / "app",  # Altere conforme a estrutura do seu projeto
+    BASE_DIR / "app" / "static",  # Altere conforme a estrutura do seu projeto
 ]
 
 # Default primary key field type
