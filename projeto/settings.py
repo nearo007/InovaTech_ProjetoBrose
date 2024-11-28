@@ -116,7 +116,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "app" / "static",  # Altere conforme a estrutura do seu projeto
+    BASE_DIR / "app" / "static" / "app",  # Altere conforme a estrutura do seu projeto
 ]
 
 # Default primary key field type
