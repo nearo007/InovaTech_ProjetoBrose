@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    Bem-vindo!
+{% endblock %}
+
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'app/css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="indexContainer">
+        <div class="subIndexContainer">
+            <img class="imgLogo" src="{% static 'app/img/brose_logo.png' %}" alt="">
+
+            <form class="containerForm" method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Usuário">
+                <input type="password" name="password" placeholder="Senha">
+                <button class="signinBtn" type="submit">Entrar</button>
+            </form>
+            <a class="forgotPassword" href="{% url 'password_reset' %}">Esqueci minha senha</a>
+            
+        </div>
+        <div class="subIndexContainer2">
+            <div class="signupContainer">
+                <p class="titleRight">Bem-vindo à página de login</p>
+                <p class="subTitleRight">Não está cadastrado?</p>
+                <button class="signupBtn" onclick="window.location.href = '{% url 'register' %}'">
+                    Cadastrar
+                </button>
+            </div>
+        </div>
+    </div> 
+{% endblock %}

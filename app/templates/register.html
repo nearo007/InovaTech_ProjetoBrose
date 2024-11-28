@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    Registre-se
+{% endblock %}
+
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'app/css/register.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="registerContainer">
+        <section class="containerLogin">
+            <div class="containerLogo">
+                <img class="imgLogo" src="{% static 'app/img/brose_logo.png' %}" alt="">
+            </div>
+            <h1 class="registerTitle">Preencha os campos abaixo</h1>
+            <form method="post" action="{% url 'register' %}">
+                {% csrf_token %}
+                <div class="formUser">
+                    {{ form.username }} {% if form.username.errors %}
+                    <div class="error">{{ form.username.errors }}</div>
+                    {% endif %}
+                </div>
+               
+                <div class="formEmail">
+                    {{ form.email }} {% if form.email.errors %}
+                    <div class="error">{{ form.email.errors }}</div>
+                    {% endif %}
+                </div>
+               
+                <div class="formPassOne">
+                    {{ form.password1 }} {% if form.password1.errors %}
+                    <div class="error">{{ form.password1.errors }}</div>
+                    {% endif %}
+                </div>
+               
+                <div class="formPassTwo">
+                    {{ form.password2 }} {% if form.password2.errors %}
+                    <div class="error">{{ form.password2.errors }}</div>
+                    {% endif %}
+                    <input class="pin" id="abc" type="password" placeholder='Digite o PIN fornecido'>
+                </div>
+               
+                <div class="btns">
+                    <button class="signupBtn" type="submit">Cadastrar</button>
+                    <button class="signinBtn" onclick="window.location.href = '{% url 'index' %}'">Entrar</button>
+                </div>
+            </form>
+        </section>
+    </div>
+    <script id="errors-json" type="application/json">{{ errors_json|safe }}</script>
+    <script src="{% static 'app/js/register.js' %}"></script>
+{% endblock %}

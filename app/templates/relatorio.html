@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    Funcionário
+{% endblock %}
+
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'app/css/relatorio.css' %}">
+{% endblock %}
+
+{% block content %}
+    <form class="formMain" method="get">
+        <label for="cargo">Cargo:</label>
+        <select name="cargo" id="cargo">
+            <option value="">Todos</option>
+            {% for cargo in cargos %}
+                <option value="{{ cargo }}">{{ cargo }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="skill">Skill:</label>
+        <select name="skill" id="skill">
+            <option value="">Todas</option>
+            {% for skill in skills %}
+                <option value="{{ skill.nome }}">{{ skill.nome }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="gestor">Gestor:</label>
+        <select name="gestor" id="gestor">
+            <option value="">Todos</option>
+            {% for gestor in gestores %}
+                <option value="{{ gestor.username }}">{{ gestor.username }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Gerar Relatório</button>
+    </form>
+
+    <div class="containerMain">
+        
+        <div class="topDiv">
+            <h2>Relatório de Funcionários</h2>
+            <div class="actions">
+                <a href="{% url 'main' %}">Voltar</a>
+                <input class="searchBar" type="text" id="searchInput" onkeyup="filterTable()" placeholder="Pesquisar por nome">
+                <a href="{% url 'gerar_relatorio_pdf' %}" class="btn-download-pdf">Baixar em PDF</a>
+            </div>
+            
+        </div>
+
+        <div class="bottomDiv">
+
+            <table id="funcionariosTabela">
+                <thead>
+                    <tr class="columns">
+                        <th id="th1" onclick="sortTable(0)">Nome &#9660;</th>
+                        <th id="th2" onclick="sortTable(1)">Cargo &#9650;</th>
+                        <th id="th3" onclick="sortTable(2)">Data de Nascimento &#9650;</th>
+                        <th>Skills</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for funcionario in funcionarios %}
+                        <tr class="valuesColumns">
+                            <td>{{ funcionario.nome }}</td>
+                            <td>{{ funcionario.cargo }}</td>
+                            <td>{{ funcionario.data_nascimento|date:"d/m/Y" }}</td>
+                            <td>{{ funcionario.cargo.skills.all|join:", " }}</td>
+                        </tr>
+                    {% empty %}
+                        <tr class="valuesColumns">
+                            <td style="text-align: center; color: gray" colspan="4">Nenhum funcionário encontrado.</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="{% static 'app/js/sortTable.js' %}"></script>
+    <script src="{% static 'app/js/searchTable.js' %}"></script>
+{% endblock %}

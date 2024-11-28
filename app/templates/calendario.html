@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    Bem-vindo!
+{% endblock %}
+
+{% block extrahead %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário</title>
+    <script src="{% static 'app/js/calendario.js' %}" defer></script>
+    <link rel="stylesheet" href="{% static 'app/css/calendario.css' %}">
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales/pt-br.js'></script>
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/main.min.css' rel='stylesheet' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/main.min.js'></script>
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css' rel='stylesheet' />
+{% endblock %}
+</head>
+{% block content %}
+    <h1>Calendário</h1>
+    <div class="pageDiv"> 
+        <div class="pageGrid">
+            <div id='calendario'></div>
+            <form id="event-form" method="post" action="{% url 'adicionar_item' %}">
+                <img class="imgLogo" src="{% static 'app/img/brose_logo.png' %}" alt="">
+                {% csrf_token %}
+                <input type="text" id="event-title" name="titulo" placeholder="Título do Evento" required>
+                <input type="date" id="event-start" name="data_inicio" required>
+                <input type="date" id="event-end" name="data_fim">
+                <textarea id="event-description" name="descricao" placeholder="Descrição"></textarea>
+                <button type="submit">Adicionar Evento</button>
+                <button class="goBackBtn" onclick="location.href='{% url 'main' %}'">Voltar</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

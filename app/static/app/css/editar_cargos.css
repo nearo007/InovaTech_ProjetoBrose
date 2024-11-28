@@ -1,0 +1,181 @@
+/* Estilos principais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+#id_skills {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 10px 0;
+    max-height: 160px;
+    overflow-y: scroll;
+}
+
+#id_nome {
+    font-size: 20px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.cargoForm {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: 50px;
+}
+
+.cargoForm h2 {
+    margin-top: 0;
+    color: #333;
+    font-size: 24px;
+}
+
+.cargoForm form {
+    display: flex;
+    flex-direction: column;
+}
+
+.cargoForm form .submitButton {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.cargoForm button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cargoForm .cancelBtn {
+    background-color: #c23131;
+    color: white;
+    transition: .2s;
+}
+
+.cargoForm .cancelBtn:hover {
+    background-color: #9e0000;
+}
+
+.cargoForm button[type="submit"] {
+    background-color: #c23131;
+    color: white;
+}
+
+.cargoForm button[type="submit"]:hover {
+    background-color: #9e0000;
+}
+
+.searchInput {
+    display: flex;
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: 20px;
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    background-color: rgb(248, 248, 248);
+    border: 2px solid rgb(163, 163, 163);
+    border-radius: 30px;
+}
+
+#skillSearch {
+    display: flex;
+    margin-bottom: 20px;
+    font-size: 20px;
+    width: 50%;
+    max-width: 500px;
+    padding: 5px;
+    border: 2px solid rgb(163, 163, 163);
+    border-radius: 10px;
+}
+
+.tableDiv {
+    height: 70vh;
+    overflow-y: scroll;
+}
+
+/* Estilos da tabela */
+.cargoTable {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: 50px;
+}
+
+.cargoTable table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.cargoTable th,
+.cargoTable td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.cargoTable th:first-child {
+    border-top-left-radius: 8px;
+}
+
+.cargoTable th:last-child {
+    border-top-right-radius: 8px;
+}
+
+.cargoTable th {
+    background-color: #c23131;
+    color: white;
+    font-size: 18px;
+}
+
+.cargoTable tr:hover {
+    background-color: #f9f9f9;
+}
+
+.cargoTable tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+.cargoTable td {
+    font-size: 16px;
+}
+
+.cargoTable td a {
+    color: #c23131;
+    text-decoration: none;
+}
+
+.cargoTable td a:hover {
+    text-decoration: underline;
+}
+
+.cargoTable .valuesColumns {
+    text-align: center;
+    color: gray;
+}
+
+.deleteIcon {
+    width: 20px;
+    height: 20px;
+}
+
+button {
+    margin: 0;
+}

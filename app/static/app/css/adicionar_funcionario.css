@@ -1,0 +1,72 @@
+/* Estilo geral da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Contêiner para o formulário */
+form {
+    width: 500px;
+    background-color: #ffffff;
+    padding: 20px 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+h2 {
+    color: #333;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Estilo dos campos de formulário */
+form p {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+form label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.submitButton {
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilo do botão */
+button {
+    background-color: #c23131;;
+    color: #fff;
+    margin: auto;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #9e0000;;
+}

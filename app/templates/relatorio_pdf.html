@@ -1,0 +1,24 @@
+<table style="width: 100%; max-width: 800px; border-collapse: collapse; margin: 0 auto;">
+        <thead>
+            <tr>
+                <th style="width: 100px; height: 20px; background-color: #f2f2f2;">Nome</th>
+                <th style="width: 100px; background-color: #f2f2f2;">Cargo</th>
+                <th style="width: 100px; background-color: #f2f2f2;">Data de Nascimento</th>
+                <th style="width: 300px; background-color: #f2f2f2;">Skills</th> <!-- Aumentado para 300px -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for funcionario in funcionarios %}
+                <tr>
+                    <td style=" width: 200px; border: 1px solid #ddd; padding: 8px; text-align: center;">{{ funcionario.nome }}</td>
+                    <td style=" width: 200px; border: 1px solid #ddd; padding: 8px; text-align: center;">{{ funcionario.cargo }}</td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">{{ funcionario.data_nascimento|date:"d/m/Y" }}</td>
+                    <td style="width: 250px; border: 1px solid #ddd; padding: 8px; word-wrap: break-word; text-align: center;">{{ funcionario.cargo.skills.all|join:", " }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4" style="text-align: center; color: gray; border: 1px solid #ddd; padding: 8px;">Nenhum funcionário encontrado.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>

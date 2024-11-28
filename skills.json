@@ -1,0 +1,178 @@
+[
+    {
+        "nome": "JavaScript",
+        "nivel": 4
+    },
+    {
+        "nome": "Django",
+        "nivel": 3
+    },
+    {
+        "nome": "Java",
+        "nivel": 4
+    },
+    {
+        "nome": "MongoDB",
+        "nivel": 2
+    },
+    {
+        "nome": "Python",
+        "nivel": 5
+    },
+    {
+        "nome": "HTML",
+        "nivel": 5
+    },
+    {
+        "nome": "CSS",
+        "nivel": 5
+    },
+    {
+        "nome": "Node.js",
+        "nivel": 4
+    },
+    {
+        "nome": "React",
+        "nivel": 3
+    },
+    {
+        "nome": "SQL",
+        "nivel": 4
+    },
+    {
+        "nome": "PostgreSQL",
+        "nivel": 4
+    },
+    {
+        "nome": "Git",
+        "nivel": 5
+    },
+    {
+        "nome": "Docker",
+        "nivel": 3
+    },
+    {
+        "nome": "AWS",
+        "nivel": 3
+    },
+    {
+        "nome": "Negociação",
+        "nivel": 4
+    },
+    {
+        "nome": "Prospecção de Clientes",
+        "nivel": 4
+    },
+    {
+        "nome": "CRM",
+        "nivel": 3
+    },
+    {
+        "nome": "Técnicas de Vendas",
+        "nivel": 5
+    },
+    {
+        "nome": "Elaboração de Propostas Comerciais",
+        "nivel": 4
+    },
+    {
+        "nome": "Análise de Mercado",
+        "nivel": 3
+    },
+    {
+        "nome": "Marketing Digital",
+        "nivel": 4
+    },
+    {
+        "nome": "SEO",
+        "nivel": 3
+    },
+    {
+        "nome": "Google Analytics",
+        "nivel": 4
+    },
+    {
+        "nome": "Marketing de Conteúdo",
+        "nivel": 4
+    },
+    {
+        "nome": "Gestão de Redes Sociais",
+        "nivel": 5
+    },
+    {
+        "nome": "Publicidade Paga (Google Ads, Facebook Ads)",
+        "nivel": 3
+    },
+    {
+        "nome": "Análise Financeira",
+        "nivel": 4
+    },
+    {
+        "nome": "Planejamento Financeiro",
+        "nivel": 3
+    },
+    {
+        "nome": "Contabilidade",
+        "nivel": 4
+    },
+    {
+        "nome": "Gestão de Orçamento",
+        "nivel": 4
+    },
+    {
+        "nome": "Contas a Pagar e Receber",
+        "nivel": 5
+    },
+    {
+        "nome": "Modelagem Financeira",
+        "nivel": 3
+    },
+    {
+        "nome": "Recrutamento e Seleção",
+        "nivel": 4
+    },
+    {
+        "nome": "Treinamento e Desenvolvimento",
+        "nivel": 4
+    },
+    {
+        "nome": "Gestão de Desempenho",
+        "nivel": 3
+    },
+    {
+        "nome": "Administração de Pessoal",
+        "nivel": 5
+    },
+    {
+        "nome": "Cultura Organizacional",
+        "nivel": 3
+    },
+    {
+        "nome": "Remuneração e Benefícios",
+        "nivel": 3
+    },
+    {
+        "nome": "Figma",
+        "nivel": 4
+    },
+    {
+        "nome": "Adobe Photoshop",
+        "nivel": 3
+    },
+    {
+        "nome": "Adobe Illustrator",
+        "nivel": 3
+    },
+    {
+        "nome": "UI/UX Design",
+        "nivel": 4
+    },
+    {
+        "nome": "Prototipagem",
+        "nivel": 4
+    },
+    {
+        "nome": "Design Gráfico",
+        "nivel": 5
+    }
+]

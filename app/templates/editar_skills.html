@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    Editar Skills
+{% endblock %}
+
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'app/css/editar_skills.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="mainContainer">
+        <div class="skillForm">
+            <form method="post">
+                <h2>Editar Skills</h2>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="submitButton">
+                    <button type="button"class="cancelBtn" onclick="location.href='{% url 'main' %}'">Voltar</button>
+                    <button type="submit">Salvar</button>
+                </div>
+            </form>
+        </div>
+        <div class="skillTable">
+            <input class="searchBar" type="text" id="searchInput" onkeyup="filterTable()" placeholder="Pesquisar por nome">
+            <div class="tableDiv">
+                {% if messages %}
+                {% for message in messages %}
+                    <div class="alert {{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+                {% endif %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Níveis</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        {% for skill in skills %}
+                            <tr>
+                                <td>{{ skill.nome }}</td>
+                                <td>
+                                    {{ skill.nivel }}
+                                    <form action="{% url 'remove_skill' skill_id=skill.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <button type="submit" class="remove_skill">
+                                            <img class="deleteIcon" src="{% static 'app/img/icons/delete.png' %}" alt="">
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        {% empty %}
+                            <tr class="valuesColumns">
+                                <td style="text-align: center; color: gray" colspan="4">Nenhuma skill cadastrada no sistema.</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'app/js/searchTable.js'%}"></script>
+{% endblock %}

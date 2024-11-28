@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    Adicionar Funcionário
+{% endblock %}
+
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'app/css/adicionar_funcionario.css' %}">
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        <h2>Adicionar Funcionário</h2>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="submitButton">
+            <button type="button"class="cancelBtn" onclick="location.href='{% url 'main' %}'">Voltar</button>
+            <button type="submit">Salvar</button>
+        </div>
+    </form>
+    <script src="{% static 'app/js/dateInputAutoSlash.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,221 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+    font-family: Calibri;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+.indexContainer{
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.subIndexContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    width: 450px;
+    height: 480px; /* Deixe a altura do conteúdo determinar a altura do body */
+    border-radius: 5px 0 0 5px;
+    border: 2px solid transparent;
+    padding: 15px; /* Use padding em vez de margin para evitar interferir na centralização */
+    box-sizing: border-box; /* Inclui borda e padding dentro da largura */
+    background-color: white;
+    
+}
+
+.subIndexContainer2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+    height: 480px; /* Deixe a altura do conteúdo determinar a altura do body */
+    border-radius: 0 5px 5px 0;
+    border: none;
+    padding: 15px; /* Use padding em vez de margin para evitar interferir na centralização */
+    box-sizing: border-box; /* Inclui borda e padding dentro da largura */
+    background-image: linear-gradient(to top, rgb(182, 37, 37), rgb(236, 43, 75));
+    
+}
+
+.signupContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.forgotPassword{
+    color: rgb(236, 43, 75);
+    margin: 20px 0 0 0;
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.titleRight{
+    font-size: 38px;
+    margin: 0 0 0px 0;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+.subTitleRight{
+    color: white;
+    font-size: 30px;
+    
+}
+
+.titleButtonsContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+.imgLogo{
+    border-radius: 5px;
+    padding: 7px;
+    width: 50%;
+    margin-top: 20px;
+}
+
+.imgLogo span{
+    text-decoration: underline;
+}
+
+.containerLogin{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.loginMain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginInput, .passInput{
+    width: 250px;
+    height: 25px;
+    padding: 1px;
+    margin: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: solid 1px #000;
+}
+
+.btns{
+    display: flex;
+}
+
+.signinBtn{
+    background-color: rgb(236, 43, 75);
+    border: none;
+    width: 330px;
+    margin-top: 30px;
+}
+
+.signupBtn{
+    background-color: transparent;
+    border: solid 2px white;
+    width: 160px;
+    font-size: 2px;
+    box-shadow: inset 0 0 5px #00000036;
+}
+
+.signinBtn, .signupBtn{
+    height: 60px;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    font-size: 20px;
+    transition: .3s;
+    
+}
+
+.signinBtn:hover, .signupBtn:hover{
+    opacity: 60%;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+.containerLogin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgLogo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgLogo{
+    border-radius: 5px;
+    padding: 7px;
+    width: 80%;
+}
+
+.imgLogo span{
+    text-decoration: underline;
+}
+
+.title{
+    text-align: center;
+    justify-content: center;
+}
+
+.containerForm{
+    text-align: center;
+}
+
+.containerForm input::placeholder{
+    color: rgb(129, 129, 129);
+    font-size: 20px;
+}
+
+input[type="text"], input[type="password"]{
+    width: 300px;
+    height: 25px;
+    padding: 15px 15px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    margin-top: 25px;
+    background-color: rgb(243, 243, 243);
+    box-shadow: inset 0 0 2px #b8bbbe;
+    font-size: 20px;
+    color:rgb(73, 73, 73);
+}
+
+.btns{
+    display: flex;
+    justify-content: center;
+}

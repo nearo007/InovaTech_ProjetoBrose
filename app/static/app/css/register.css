@@ -1,0 +1,128 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+    font-family: Calibri;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+.registerContainer{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 480px;
+    height: 720px; /* Deixe a altura do conteúdo determinar a altura do body */
+    background-color: white;
+    padding: 20px;
+    
+}
+
+.containerLogo{
+    text-align: center;
+    justify-content: center;
+}
+
+.imgLogo{
+    width: 220px;
+    margin: 0;
+}
+
+.registerTitle{
+    text-align: center;
+    justify-content: center;
+    color: rgb(157, 0, 0);
+    font-size: 25px;
+    margin: 20px 0 0 0;
+    font-weight: normal;
+}
+
+.containerLogin{
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 300px;
+    height: 20px;
+    padding: 15px 15px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    background-color: rgb(243, 243, 243);
+    box-shadow: inset 0 0 2px #b8bbbe;
+    font-size: 20px;
+    color:rgb(73, 73, 73);
+}
+
+.formPassOne{
+    margin-left: -3px;
+}
+
+.formUser, .formEmail, .formPassOne, .formPassTwo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.formUser p, .formEmail p, .formPassOne p, .formPassTwo p{
+    margin: 0;
+    margin-top: 10px;
+}
+
+.form-control{
+    margin-bottom: 20px;
+}
+
+ul{
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+.passRules li{
+    font-size: 15px;
+    text-align: justify;
+}
+
+.btns{
+    display: flex;
+    justify-content: center;
+    height: 60px;
+}
+
+.signinBtn, .signupBtn{
+    width: 180px;
+    margin: 0 10px;
+    margin-top: 20px;
+    height: 60px;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    font-size: 20px;
+    transition: .3s;
+    
+    background-color: rgb(236, 43, 75);
+    border: none;
+}
+
+.signupBtn {
+    background-color: rgb(122, 122, 122);
+    color: rgb(238, 238, 238);
+}
+
+.signinBtn:hover, .signupBtn:hover{
+    opacity: 60%;
+}

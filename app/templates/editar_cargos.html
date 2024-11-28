@@ -1,0 +1,72 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    Editar Cargos
+{% endblock %}
+
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'app/css/editar_cargos.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="mainContainer">
+        <div class="cargoForm">
+            <form method="post">
+                <h2>Editar Cargos</h2>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="text" id="skillSearch" onkeyup="searchSkills(this, 'id_skills')" placeholder="Pesquisar Skills">
+                <div class="submitButton">
+                    <button type="button"class="cancelBtn" onclick="location.href='{% url 'main' %}'">Voltar</button>
+                    <button type="submit">Salvar</button>
+                </div>
+            </form>
+        </div>
+        <div class="cargoTable">
+            <input class="searchInput" type="text" id="searchInput" onkeyup="filterTable()" placeholder="Pesquisar por nome">
+
+            <div class="tableDiv">
+                {% if messages %}
+                {% for message in messages %}
+                    <div class="alert {{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+                {% endif %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Skills</th>
+                            <th>Remover</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        {% for cargo in cargos %}
+                            <tr>
+                                <td>{{ cargo.nome }}</td>
+                                <td>
+                                    {{ cargo.skills.all|join:", " }}
+                                </td>
+                                <td>
+                                    <form action="{% url 'remove_cargo' cargo_id=cargo.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <button type="submit" class="remove_cargo">
+                                            <img class="deleteIcon" src="{% static 'app/img/icons/delete.png' %}" alt="">
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        {% empty %}
+                            <tr class="valuesColumns">
+                                <td style="text-align: center; color: gray" colspan="4">Nenhum cargo cadastrado no sistema.</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'app/js/searchTable.js' %}"></script>
+    <script src="{% static 'app/js/searchSkills.js' %}"></script>
+{% endblock %}

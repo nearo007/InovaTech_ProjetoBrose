@@ -1,0 +1,59 @@
+{% extends 'layout.html'%}
+{% load static %}
+
+{% block title %}
+    Entrou
+{% endblock %}
+
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'app/css/main.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="mainContainer">
+        <div class="sidebar">
+            <ul>
+                <li><a href="{% url 'editar_skills' %}">Skills</a></li>
+                <li><a href="{% url 'editar_cargos' %}">Cargos</a></li>
+                <li><a href="{% url 'adicionar_funcionario' %}">Funcionários</a></li>
+                <li><a href="{% url 'calendario' %}">Calendário</a></li>
+                <li><a href="{% url 'relatorio_dinamico' %}">Relatório</a></li>
+            </ul>
+            <div class="sidebarArrow">
+                <img src="{% static 'app/img/right-arrow2.png' %}" alt="sidebar arrow">
+            </div>
+        </div>
+
+        <div class="rightContainer">
+            <h1>Funcionários</h1>
+            <input class="searchBar" type="text" id="searchInput" onkeyup="filterTable()" placeholder="Pesquisar por nome">
+
+            <div class="divTabela">
+                <table id="funcionariosTabela" class="funcionariosNomes">
+                    <thead>
+                        <tr>
+                            <th id="th1" onclick="sortTable(0)">Nome &#9660;</th>
+                            <th id="th2" onclick="sortTable(1)">Cargo &#9660;</th>
+                            <th id="th3" onclick="sortTable(2)">Data de Nascimento &#9660;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for funcionario in funcionarios %}
+                        <tr class="funcionarioOuterDiv" onclick="window.location='{% url 'funcionario_detail' funcionario.id %}'">
+                            <td class="infoUser">{{ funcionario.nome }}</td>
+                            <td class="infoUser">{{ funcionario.cargo }}</td>
+                            <td class="infoUser">{{ funcionario.data_nascimento|date:"d/m/Y" }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr class="valuesColumns">
+                            <td style="text-align: center; color: gray" colspan="4">Nenhum funcionário encontrado.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'app/js/sortTable.js' %}"></script>
+    <script src="{% static 'app/js/searchTable.js' %}"></script>
+{% endblock %}
