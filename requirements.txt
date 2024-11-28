@@ -1,3 +1,5 @@
 gunicorn
 psycopg2
 django
+dotenv
+xhtml2pdf
