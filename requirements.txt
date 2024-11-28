@@ -1,5 +1,7 @@
 gunicorn
 psycopg2
 django
-dotenv
+python-dotenv
+reportlab
+html5lib
 xhtml2pdf

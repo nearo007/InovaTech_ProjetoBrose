@@ -12,7 +12,7 @@ from .forms import FuncionarioForm, SkillForm, CargoForm, FindCargoForm
 import io
 from django.http import FileResponse
 from django.template.loader import get_template
-from xhtml2pdf import pisa
+#from xhtml2pdf import pisa
 from .models import Funcionario, Skill
 from django.http import FileResponse, HttpResponse
 from django.views.decorators.csrf import csrf_protect
