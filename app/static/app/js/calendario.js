@@ -9,13 +9,28 @@ document.addEventListener('DOMContentLoaded', function() {
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,timeGridDay'
         },
-        events: '/calendario/eventos/',
+        events: function(fetchInfo, successCallback, failureCallback) {
+            fetch('/calendario/eventos/')
+                .then(response => response.json())
+                .then(events => {
+                    // Adicionar 1 dia à data final de cada evento
+                    events.forEach(event => {
+                        if (event.end) {
+                            let endDate = new Date(event.end);
+                            endDate.setDate(endDate.getDate() + 1); // Adiciona 1 dia
+                            event.end = endDate.toISOString(); // Converte de volta para ISO 8601
+                        }
+                    });
+                    successCallback(events);
+                })
+                .catch(error => failureCallback(error));
+        },
         eventClick: function(info) {
             var url = `/calendario/deletar/${info.event.id}/`;
             console.log('URL da exclusão:', url);
             if (confirm('Tem certeza de que deseja excluir este evento?')) {
                 fetch(url, {
-                    method: 'POST',  // Usando POST conforme sua configuração de view
+                    method: 'POST',
                     headers: {
                         'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
                         'Content-Type': 'application/json'
