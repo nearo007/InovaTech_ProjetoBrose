@@ -1,3 +1,26 @@
+# Sistema de Gestão de Funcionários e Cargos
+
+Este é um sistema de gerenciamento de funcionários, cargos, habilidades e eventos para empresas. Ele permite aos administradores registrar, editar e excluir funcionários, cargos e habilidades, além de gerar relatórios dinâmicos e gerar PDFs com os dados de funcionários. O sistema também oferece um calendário de eventos e uma funcionalidade para promover funcionários com base nas habilidades necessárias.
+
+## Funcionalidades:
+
+- **Registro e Login de Usuários**: Cadastro de novos usuários e autenticação de login.
+- **Gestão de Funcionários**: Adicionar, editar, remover e visualizar os detalhes dos funcionários.
+- **Gestão de Cargos e Habilidades**: Adicionar, editar e remover cargos e habilidades.
+- **Promoção de Funcionários**: Comparar as habilidades de um funcionário com as habilidades de um cargo para avaliar a elegibilidade para promoção.
+- **Relatórios Dinâmicos**: Filtros personalizados para gerar relatórios de funcionários com base em cargos, habilidades e gestores.
+- **Calendário de Eventos**: Visualização e gerenciamento de eventos com adição, edição e remoção de itens no calendário.
+- **Geração de Relatórios em PDF**: Geração de relatórios em PDF com os dados de funcionários.
+- **Interface de Administração**: Interface amigável para gestão de dados e visualização de informações.
+
+## Estrutura de Diretórios:
+
+- **views.py**: Contém as views que gerenciam as ações do usuário, como login, registro, adição/remoção de funcionários, geração de relatórios e interação com o calendário.
+- **forms.py**: Contém os formulários usados nas views para registro, login, e manipulação de dados de funcionários, cargos e habilidades.
+- **models.py**: Define as estruturas de dados, incluindo os modelos de Funcionário, Cargo, Skill, CalendárioItem, entre outros.
+- **templates/**: Contém os arquivos HTML para renderizar as páginas no front-end, como páginas de registro, login, edição de cargos, relatórios, etc.
+- **static/**: Contém os arquivos estáticos, como CSS e JS, usados para estilizar as páginas e interagir com o front-end.
+
 ## Tela inical
 ![image](https://github.com/user-attachments/assets/eb529547-5770-49b2-9af5-0a429e4cc1e8)
 
